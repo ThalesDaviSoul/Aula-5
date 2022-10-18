@@ -1,7 +1,12 @@
 package Att2;
 
+
 public class Estatistica {
     private int elements[];
+
+    public int[] getElements(){
+        return this.elements;
+    }
 
     public Estatistica(int elements[]){
         this.elements = elements;
@@ -35,6 +40,28 @@ public class Estatistica {
             return 0;
         }
         return tendency;
+    }
+
+
+    public float mediana(){
+        float resultado = 0;
+        if(elements.length % 2 == 0){
+            resultado += elements[(int)(elements.length/2)-1];
+            resultado += elements[(int)(elements.length/2)];
+            resultado /= 2;
+
+        }else{
+            resultado += elements[elements.length/2];
+        }
+        return resultado;
+    }
+
+    public float media(){
+        float media = 0;
+        for(int e : elements){
+            media+=e;
+        }
+        return media/elements.length;
     }
 
 }

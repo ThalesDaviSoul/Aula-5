@@ -7,10 +7,14 @@ public class App {
         for(int i = 0; i < elements.length; i++){
             elements[i] = i;
         }
-        elements[5] = 4;
+        elements[5] = 8;
         Estatistica att = new Estatistica(elements);
-        System.out.println(att.moda());
-
+        for(int element : att.getElements()){
+            System.out.println(element);
+        }
+        System.out.println("Moda: "+att.moda());
+        System.out.println("Mediana: "+att.mediana());
+        System.out.println("Media: "+ att.media());
     }
     
 }
